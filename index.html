@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c111b" />
+    <title>Algo Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Sorting and search</p>
+        <h1>Algo Visualizer</h1>
+        <p class="lede">Step through Quick Sort, Bubble Sort, breadth-first search, and Dijkstra on one page.</p>
+      </header>
+
+      <section class="toolbar" aria-label="Controls">
+        <label class="field">
+          Algorithm
+          <select id="algo">
+            <option value="bubble">Bubble Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="bfs">Breadth-first search</option>
+            <option value="dijkstra">Dijkstra</option>
+          </select>
+        </label>
+        <label class="field grow">
+          Speed
+          <input id="speed" type="range" min="1" max="100" value="72" />
+        </label>
+        <label class="field grow" id="size-field">
+          Size
+          <input id="size" type="range" min="10" max="48" value="28" />
+        </label>
+        <label class="field" id="draw-field" hidden>
+          Draw
+          <select id="draw">
+            <option value="wall">Walls</option>
+            <option value="erase">Erase</option>
+            <option value="start">Start</option>
+            <option value="end">Goal</option>
+          </select>
+        </label>
+        <button id="clear" type="button" hidden>Clear walls</button>
+        <button id="randomize" type="button">Randomize</button>
+        <button id="pause" type="button">Pause</button>
+        <button id="run" class="primary" type="button">Run</button>
+      </section>
+
+      <p id="status" role="status">Ready.</p>
+      <section id="stage" class="stage">
+        <div id="bars" class="bars"></div>
+        <div id="grid" class="grid" hidden></div>
+      </section>
+      <ul id="legend" class="legend"></ul>
+      <p id="complexity" class="complexity"></p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
